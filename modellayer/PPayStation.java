@@ -68,6 +68,7 @@ public class PPayStation {
 		this.amount += valueInCent;
 	}
 	
+	//Modified by TEST Department
 	public int getTimeBoughtInMinutes() {
 		return Calculation.getTimeBoughtInMin(amount);
 	}
@@ -77,11 +78,11 @@ public class PPayStation {
 		Validation.validateCoin(coin);
 	}
 	
-
+	//Modified by TEST Department
 	private double getEuroCoinValueInCent(Coin coin) {
 		return Calculation.getEuroCoinValueInCent(coin);
 	}
-
+	//Modified by TEST Department
 	private double getDkkCoinValueInCent(Coin coin, PPrice price) {
 		return Calculation.getDkkCoinValueInCent(coin, price);
 	}	
