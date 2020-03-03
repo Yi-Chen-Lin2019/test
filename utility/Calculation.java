@@ -4,6 +4,7 @@ import modellayer.Coin;
 import modellayer.Currency;
 import modellayer.PPrice;
 
+//Made by TEST Department
 public class Calculation {
 	public static int getTimeBoughtInMin(double amount) {
 		PPrice aPrice = new PPrice();
