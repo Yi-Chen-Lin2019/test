@@ -7,8 +7,8 @@ import controllayer.*;
 import modellayer.*;
 
 /**
- * Inspired by the book: Flexible, Reliable Software Henrik B�rbak Christensen:
- * Flexible, Reliable Software. Taylor and Francis Group, LLC 2010
+ * Tests conducted by UCN Denmark, Computer Science students of group number 5
+ * Test conducted in this class, checks if system displays correctly parking time when entering euro cents and danish Ore.
  */
 
 public class TestCalculationCurrencyMixed {
@@ -27,8 +27,8 @@ public class TestCalculationCurrencyMixed {
 	@Test
 	public void shouldDisplay4MinFor1CentAnd1Ore() throws IllegalCoinException {
 		// Arrange
-		int amountOfCents = 1;
-		int amountOfOres = 50;
+		int amountOfCents = 1;  //1 cent
+		int amountOfOres = 50;  //50 Ore
 		int expectedTime = 4;   //minutes
 		Currency.ValidCurrency currencyOfCents = Currency.ValidCurrency.EURO;
 		Currency.ValidCoinType typeOfCents = Currency.ValidCoinType.FRACTION;
@@ -40,7 +40,6 @@ public class TestCalculationCurrencyMixed {
 		ps.addPayment(amountOfCents, currencyOfCents, typeOfCents);
 		ps.addPayment(amountOfOres, currencyOfOres, typeOfOres);
 		// Assert
-		//assertEquals("Dummy", 0, 1);
 		assertEquals("Entering 1 cent and 50 �re, 4 minutes parking time: ", expectedTime, ps.readDisplay());
 	}
 
