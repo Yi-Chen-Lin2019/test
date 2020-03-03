@@ -9,11 +9,10 @@ public class DBConnection {
 	//Constants used to get access to the database
 	
 	private static final String  driver = "jdbc:sqlserver://localhost:1433";
-	//private static final String  driver = "jdbc:sqlserver://NO182001\\MSSQL2017:1433";
-    private static final String  databaseName = "; databaseName=PayStation";
+    private static final String  databaseName = ";databaseName=PayStation";
     
-    private static String  userName = "; user=sa";
-    private static String password = ";password=reallyStrongPwd567";
+    private static String  userName = ";user=sa";
+    private static String password = ";password=admin";
    
     private DatabaseMetaData dma;
     private static Connection con;
@@ -29,7 +28,8 @@ public class DBConnection {
         try{
             //load of driver
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("Driver class loaded ok");
+//            System.out.println("Driver class loaded ok");
+//            System.out.println(url);
           
         }
         catch(Exception e){
@@ -41,9 +41,9 @@ public class DBConnection {
             con = DriverManager.getConnection(url);
             con.setAutoCommit(true);
             dma = con.getMetaData(); // get meta data
-            System.out.println("Connection to " + dma.getURL());
-            System.out.println("Driver " + dma.getDriverName());
-            System.out.println("Database product name " + dma.getDatabaseProductName());
+//            System.out.println("Connection to " + dma.getURL());
+//            System.out.println("Driver " + dma.getDriverName());
+//            System.out.println("Database product name " + dma.getDatabaseProductName());
         }//end try
         catch(Exception e){
             System.out.println("Problems with the connection to the database:");
