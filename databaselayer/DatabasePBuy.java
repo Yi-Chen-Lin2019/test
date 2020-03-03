@@ -60,6 +60,7 @@ public class DatabasePBuy implements IDbPBuy {
 	}
 
 	// example using prepared stmt
+	//MODIFIED BY TEST DEPARTMENT
 	public int deleteParkingBuy(PBuy parkingBuy) throws DatabaseLayerException {
 		int numRowsDeleted = 0;
 
