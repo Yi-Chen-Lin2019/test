@@ -15,6 +15,8 @@ public class DatabasePPrice implements IDbPPrice {
 		return new PPrice();
 	}
 	
+	
+	//MODIFIED BY TEST DEPARTMENT
 	public PPrice getPriceByZoneId(int zoneId) throws DatabaseLayerException {
 		PPrice foundPrice = null;
 		
