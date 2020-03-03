@@ -1,7 +1,6 @@
 package databaselayer;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Calendar;
 import java.sql.SQLException;
@@ -23,7 +22,7 @@ public class DatabasePPrice implements IDbPPrice {
 		
 		Connection con = DBConnection.getInstance().getDBcon();
 
-		String baseSelect = "select top 1 price as price, pZone_id as zone from PPrice ";
+		String baseSelect = "select top 1 price, pZone_id from PPrice ";
 		baseSelect += "where pZone_id = " + zoneId + " and starttime < '" + dateNow + "' ";
 		baseSelect += "order by starttime desc";
 		System.out.println(baseSelect);
@@ -34,19 +33,11 @@ public class DatabasePPrice implements IDbPPrice {
 		try {
 			Statement stmt = con.createStatement();
 			stmt.setQueryTimeout(5);
-			// Todo: Get PPrice object		
-			
-			 ResultSet rs = stmt.executeQuery(baseSelect);
-			 
-			//CODE:
-			 PPrice pp = new PPrice();
-			 rs.next();			
-			 PZone pz = new PZone();
-			 pz.setpZoneId(zoneId);
-			 pp.setParkingZone(pz);
-			 pp.setParkingPrice(rs.getInt("price"));
-			 foundPrice = pp;
-			
+			// Todo: Get PPrice object
+			// ResultSet rs = stmt.executeQuery(baseSelect);
+			/*
+			 * Insert code 
+			 */
 			stmt.close();
 		} catch (SQLException ex) {
 			foundPrice = null;

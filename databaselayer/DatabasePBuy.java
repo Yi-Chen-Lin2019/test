@@ -65,6 +65,7 @@ public class DatabasePBuy implements IDbPBuy {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
+
 		String baseDelete = "delete from PBuy where id = ?";
 		System.out.println(baseDelete);
 
